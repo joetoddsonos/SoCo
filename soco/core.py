@@ -739,12 +739,12 @@ class SoCo(_SocoSingletonBase):
         if start:
             self.play()
 
-    @only_on_master
+    #@only_on_master  # causing issues for me
     def play(self):
         """Play the currently selected track."""
         self.avTransport.Play([("InstanceID", 0), ("Speed", 1)])
 
-    @only_on_master
+    #@only_on_master  # causing issues for me
     def play_uri(self, uri="", meta="", title="", start=True, force_radio=False):
         """Play a URI.
 
